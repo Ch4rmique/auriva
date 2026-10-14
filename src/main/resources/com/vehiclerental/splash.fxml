@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vehiclerental.controller.SplashController"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            style="-fx-background-color: #1E40AF;">
+    <children>
+
+        <VBox fx:id="splashBox"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              style="-fx-alignment: center;
+                     -fx-spacing: 20;">
+            <children>
+
+                <!-- LOGO BOX -->
+                <StackPane prefWidth="100.0" prefHeight="100.0"
+                           style="-fx-background-color: #2563EB;
+                                  -fx-background-radius: 25px;">
+                    <children>
+                        <Label text="A"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 56px;
+                                      -fx-font-weight: bold;" />
+                    </children>
+                </StackPane>
+
+                <!-- COMPANY NAME -->
+                <Label text="AURIVA"
+                       style="-fx-text-fill: #FFFFFF;
+                              -fx-font-size: 48px;
+                              -fx-font-weight: bold;" />
+
+                <!-- GOLD DIVIDER -->
+                <Label prefWidth="100.0" prefHeight="3.0"
+                       style="-fx-background-color: #D4AF37;
+                              -fx-background-radius: 2px;" />
+
+                <!-- TAGLINE -->
+                <Label text="Move with Gold. Drive with Grace."
+                       style="-fx-text-fill: #BFDBFE;
+                              -fx-font-size: 14px;
+                              -fx-font-style: italic;" />
+
+                <!-- SPACER -->
+                <Label prefHeight="30.0" />
+
+                <!-- LOADING BAR -->
+                <ProgressBar fx:id="loadingBar"
+                             prefWidth="200.0"
+                             prefHeight="6.0"
+                             progress="0.0"
+                             style="-fx-accent: #D4AF37;
+                                    -fx-background-color: #1D4ED8;
+                                    -fx-background-radius: 3px;" />
+
+                <!-- LOADING TEXT -->
+                <Label fx:id="loadingLabel"
+                       text="Starting up..."
+                       style="-fx-text-fill: #93C5FD;
+                              -fx-font-size: 12px;" />
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vehiclerental.controller.WelcomeController"
+            prefHeight="660.0"
+            prefWidth="1060.0"
+            style="-fx-background-color: #FFFFFF;">
+    <children>
+
+        <!-- LEFT SIDE -->
+        <VBox fx:id="rootVBox" prefHeight="800.0" prefWidth="440.0"
+              style="-fx-background-color: #1E40AF;
+                     -fx-alignment: center;
+                     -fx-spacing: 24;
+                     -fx-padding: 60;">
+            <children>
+
+                <!-- LOGO ICON -->
+                <StackPane prefWidth="80.0" prefHeight="80.0"
+                           style="-fx-background-color: #2563EB;
+                                  -fx-background-radius: 20px;
+                                  -fx-padding: 20px;">
+                    <children>
+                        <Label text="A"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 42px;
+                                      -fx-font-weight: bold;" />
+                    </children>
+                </StackPane>
+
+                <!-- COMPANY NAME -->
+                <Label text="AURIVA"
+                       style="-fx-text-fill: #FFFFFF;
+                              -fx-font-size: 42px;
+                              -fx-font-weight: bold;" />
+
+                <!-- GOLD DIVIDER -->
+                <Label prefWidth="80.0" prefHeight="3.0"
+                       style="-fx-background-color: #D4AF37;
+                              -fx-background-radius: 2px;" />
+
+                <!-- TAGLINE -->
+                <Label text="Move with Gold. Drive with Grace."
+                       style="-fx-text-fill: #BFDBFE;
+                              -fx-font-size: 14px;
+                              -fx-font-style: italic;" />
+
+                <!-- CAR IMAGE -->
+                <ImageView fx:id="carImage"
+                           fitWidth="440.0"
+                           fitHeight="300.0"
+                           preserveRatio="true"
+                           smooth="true">
+                    <image>
+                        <Image url="@images/admn.jpg" />
+                    </image>
+                </ImageView>
+                <!-- BOTTOM TEXT -->
+                <Label text="Premium Vehicle Rentals"
+                       style="-fx-text-fill: #93C5FD;
+                              -fx-font-size: 12px;" />
+
+                <Label text="© 2025 Auriva. All rights reserved."
+                       style="-fx-text-fill: #60A5FA;
+                              -fx-font-size: 11px;" />
+
+            </children>
+        </VBox>
+
+        <!-- RIGHT SIDE -->
+        <VBox layoutX="440.0"
+              prefHeight="660.0" prefWidth="620.0"
+              style="-fx-background-color: #FFFFFF;
+                     -fx-alignment: center;
+                     -fx-spacing: 20;
+                     -fx-padding: 80;">
+            <children>
+
+                <!-- WELCOME TO HEADING -->
+                <Label text="Welcome to Auriva"
+                       style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 32px;
+                              -fx-font-weight: bold;" />
+
+                <!-- SUBTITLE -->
+                <Label text="Premium vehicle rentals at your fingertips."
+                       style="-fx-text-fill: #475569;
+                              -fx-font-size: 15px;" />
+
+                <!-- SPACER -->
+                <Label prefHeight="20.0" />
+
+                <!-- FEATURES -->
+                <Label text="Manage your entire fleet from one place"
+                       style="-fx-text-fill: #475569;
+              -fx-font-size: 14px;
+              -fx-border-color: #2563EB;
+              -fx-border-width: 0 0 0 3;
+              -fx-padding: 4 0 4 10;" />
+
+                <Label text="Track active rentals and customer records"
+                       style="-fx-text-fill: #475569;
+              -fx-font-size: 14px;
+              -fx-border-color: #2563EB;
+              -fx-border-width: 0 0 0 3;
+              -fx-padding: 4 0 4 10;" />
+
+                <Label text="Generate and sign digital rental contracts"
+                       style="-fx-text-fill: #475569;
+              -fx-font-size: 14px;
+              -fx-border-color: #2563EB;
+              -fx-border-width: 0 0 0 3;
+              -fx-padding: 4 0 4 10;" />
+
+                <Label text="Role based access for admins and staff"
+                       style="-fx-text-fill: #475569;
+              -fx-font-size: 14px;
+              -fx-border-color: #2563EB;
+              -fx-border-width: 0 0 0 3;
+              -fx-padding: 4 0 4 10;" />
+                <!-- SPACER -->
+                <Label prefHeight="20.0" />
+
+                <!-- GET STARTED BUTTON -->
+                <Button fx:id="loginBtn"
+                        text="Get Started →"
+                        mnemonicParsing="false"
+                        onAction="#handleGetStarted"
+                        prefWidth="280.0"
+                        prefHeight="50.0"
+                        style="-fx-background-color: #2563EB;
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 10px;
+                               -fx-cursor: hand;" />
+
+                <!-- SMALL PRINT -->
+                <Label text="Authorized personnel only"
+                       style="-fx-text-fill: #94A3B8;
+                              -fx-font-size: 12px;" />
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

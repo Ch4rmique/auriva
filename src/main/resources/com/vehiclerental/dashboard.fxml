@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vehiclerental.controller.DashboardController"
+            prefHeight="700.0"
+            prefWidth="1100.0"
+            style="-fx-background-color: #F1F5F9;">
+    <children>
+
+        <!-- SIDEBAR -->
+        <VBox AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              prefWidth="220.0"
+              style="-fx-background-color: #1E40AF;
+             -fx-spacing: 0;
+             -fx-padding: 0;">
+            <children>
+
+                <!-- LOGO AREA -->
+                <VBox style="-fx-alignment: center;
+                             -fx-padding: 30px 20px 20px 20px;
+                             -fx-spacing: 8;">
+                    <children>
+                        <Label text="A"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 36px;
+                                      -fx-font-weight: bold;
+                                      -fx-background-color: #2563EB;
+                                      -fx-background-radius: 12px;
+                                      -fx-padding: 8px 16px;" />
+                        <Label text="AURIVA"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 18px;
+                                      -fx-font-weight: bold;" />
+                        <Label text="Vehicle Rentals"
+                               style="-fx-text-fill: #93C5FD;
+                                      -fx-font-size: 11px;" />
+                    </children>
+                </VBox>
+
+                <!-- DIVIDER -->
+                <Label prefWidth="220.0" prefHeight="1.0"
+                       style="-fx-background-color: #1D4ED8;" />
+
+                <!-- SPACER -->
+                <Label prefHeight="10.0" />
+
+                <!-- NAV BUTTONS -->
+                <Button fx:id="dashboardBtn"
+                        text="  Dashboard"
+                        mnemonicParsing="false"
+                        onAction="#handleDashboard"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: #2563EB;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;
+                               -fx-font-weight: bold;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;
+                               -fx-border-width: 0 0 0 4px;
+                               -fx-border-color: #D4AF37;" />
+
+                <Button fx:id="vehiclesBtn"
+                        text="  Vehicles"
+                        mnemonicParsing="false"
+                        onAction="#handleVehicles"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #BFDBFE;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+                <Button fx:id="customersBtn"
+                        text="  Customers"
+                        mnemonicParsing="false"
+                        onAction="#handleCustomers"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #BFDBFE;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+                <Button fx:id="rentalsBtn"
+                        text="  Rentals"
+                        mnemonicParsing="false"
+                        onAction="#handleRentals"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #BFDBFE;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+                <Button fx:id="usersBtn"
+                        text="  Users"
+                        mnemonicParsing="false"
+                        onAction="#handleUsers"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #BFDBFE;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+                <Button fx:id="aboutBtn"
+                        text="  About"
+                        mnemonicParsing="false"
+                        onAction="#handleAbout"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #BFDBFE;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+                <!-- SPACER PUSH LOGOUT TO BOTTOM -->
+                <Label prefHeight="200.0" />
+
+                <!-- DIVIDER -->
+                <Label prefWidth="220.0" prefHeight="1.0"
+                       style="-fx-background-color: #1D4ED8;" />
+
+                <!-- LOGGED IN USER -->
+                <VBox style="-fx-padding: 16px 20px;
+                             -fx-spacing: 4;">
+                    <children>
+                        <Label fx:id="loggedInName"
+                               text="Administrator"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 13px;
+                                      -fx-font-weight: bold;" />
+                        <Label fx:id="loggedInRole"
+                               text="Admin"
+                               style="-fx-text-fill: #93C5FD;
+                                      -fx-font-size: 11px;" />
+                    </children>
+                </VBox>
+
+                <!-- LOGOUT BUTTON -->
+                <Button text="  Logout"
+                        mnemonicParsing="false"
+                        onAction="#handleLogout"
+                        prefWidth="220.0" prefHeight="48.0"
+                        style="-fx-background-color: #1D4ED8;
+                               -fx-text-fill: #FCA5A5;
+                               -fx-font-size: 14px;
+                               -fx-alignment: center-left;
+                               -fx-padding: 0 0 0 24px;
+                               -fx-cursor: hand;" />
+
+            </children>
+        </VBox>
+
+        <!-- MAIN CONTENT AREA -->
+        <VBox AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="220.0"
+              AnchorPane.rightAnchor="0.0"
+              style="-fx-background-color: #F1F5F9;
+             -fx-spacing: 0;">
+            <children>
+
+                <!-- TOP BAR -->
+                <HBox prefHeight="70.0"
+                      style="-fx-background-color: #FFFFFF;
+             -fx-alignment: center-left;
+             -fx-padding: 20px 30px 0 30px;
+             -fx-spacing: 20;">
+                    <children>
+
+                        <VBox style="-fx-spacing: 2;">
+                            <children>
+                                <Label fx:id="welcomeLabel"
+                                       text="Welcome back"
+                                       style="-fx-text-fill: #0F172A;
+                                              -fx-font-size: 20px;
+                                              -fx-font-weight: bold;" />
+                                <Label fx:id="dateLabel"
+                                       text="Today"
+                                       style="-fx-text-fill: #94A3B8;
+                                              -fx-font-size: 12px;" />
+                            </children>
+                        </VBox>
+
+                        <!-- PUSH RIGHT -->
+                        <Label style="-fx-pref-width: 500;" />
+
+                        <!-- ROLE BADGE -->
+                        <Label fx:id="roleBadge"
+                               text="Admin"
+                               style="-fx-background-color: #EFF6FF;
+                                      -fx-text-fill: #2563EB;
+                                      -fx-font-size: 12px;
+                                      -fx-font-weight: bold;
+                                      -fx-background-radius: 20px;
+                                      -fx-padding: 6px 16px;" />
+
+                    </children>
+                </HBox>
+
+                <!-- CONTENT SCROLL AREA -->
+                <ScrollPane fitToWidth="true"
+                            VBox.vgrow="ALWAYS"
+                            style="-fx-background-color: transparent;
+                   -fx-background: #F1F5F9;">
+                    <content>
+                        <VBox style="-fx-padding: 30px;
+                                     -fx-spacing: 24;">
+                            <children>
+
+                                <!-- PAGE TITLE -->
+                                <Label text="Dashboard Overview"
+                                       style="-fx-text-fill: #0F172A;
+                                              -fx-font-size: 24px;
+                                              -fx-font-weight: bold;" />
+
+                                <!-- STATS CARDS ROW -->
+                                <HBox style="-fx-spacing: 20;">
+                                    <children>
+
+                                        <!-- CARD 1 - Total Vehicles -->
+                                        <VBox prefWidth="185.0"
+                                              style="-fx-background-color: #FFFFFF;
+                                                     -fx-background-radius: 12px;
+                                                     -fx-padding: 24px;
+                                                     -fx-spacing: 8;
+                                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                                            <children>
+                                                <Label text="Total Vehicles"
+                                                       style="-fx-text-fill: #64748B;
+                                                              -fx-font-size: 13px;" />
+                                                <Label fx:id="totalVehiclesLabel"
+                                                       text="0"
+                                                       style="-fx-text-fill: #0F172A;
+                                                              -fx-font-size: 36px;
+                                                              -fx-font-weight: bold;" />
+                                                <Label text="in your fleet"
+                                                       style="-fx-text-fill: #94A3B8;
+                                                              -fx-font-size: 11px;" />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- CARD 2 - Available -->
+                                        <VBox prefWidth="185.0"
+                                              style="-fx-background-color: #FFFFFF;
+                                                     -fx-background-radius: 12px;
+                                                     -fx-padding: 24px;
+                                                     -fx-spacing: 8;
+                                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                                            <children>
+                                                <Label text="Available"
+                                                       style="-fx-text-fill: #64748B;
+                                                              -fx-font-size: 13px;" />
+                                                <Label fx:id="availableVehiclesLabel"
+                                                       text="0"
+                                                       style="-fx-text-fill: #10B981;
+                                                              -fx-font-size: 36px;
+                                                              -fx-font-weight: bold;" />
+                                                <Label text="ready to rent"
+                                                       style="-fx-text-fill: #94A3B8;
+                                                              -fx-font-size: 11px;" />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- CARD 3 - Active Rentals -->
+                                        <VBox prefWidth="185.0"
+                                              style="-fx-background-color: #FFFFFF;
+                                                     -fx-background-radius: 12px;
+                                                     -fx-padding: 24px;
+                                                     -fx-spacing: 8;
+                                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                                            <children>
+                                                <Label text="Active Rentals"
+                                                       style="-fx-text-fill: #64748B;
+                                                              -fx-font-size: 13px;" />
+                                                <Label fx:id="activeRentalsLabel"
+                                                       text="0"
+                                                       style="-fx-text-fill: #2563EB;
+                                                              -fx-font-size: 36px;
+                                                              -fx-font-weight: bold;" />
+                                                <Label text="currently out"
+                                                       style="-fx-text-fill: #94A3B8;
+                                                              -fx-font-size: 11px;" />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- CARD 4 - Customers -->
+                                        <VBox prefWidth="185.0"
+                                              style="-fx-background-color: #FFFFFF;
+                                                     -fx-background-radius: 12px;
+                                                     -fx-padding: 24px;
+                                                     -fx-spacing: 8;
+                                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                                            <children>
+                                                <Label text="Customers"
+                                                       style="-fx-text-fill: #64748B;
+                                                              -fx-font-size: 13px;" />
+                                                <Label fx:id="totalCustomersLabel"
+                                                       text="0"
+                                                       style="-fx-text-fill: #0F172A;
+                                                              -fx-font-size: 36px;
+                                                              -fx-font-weight: bold;" />
+                                                <Label text="registered"
+                                                       style="-fx-text-fill: #94A3B8;
+                                                              -fx-font-size: 11px;" />
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+                                </HBox>
+
+                                <!-- RECENT RENTALS -->
+                                <VBox style="-fx-background-color: #FFFFFF;
+             -fx-background-radius: 12px;
+             -fx-padding: 24px;
+             -fx-spacing: 16;
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                                    <children>
+
+                                        <HBox style="-fx-alignment: center-left; -fx-spacing: 12;">
+                                            <children>
+                                                <Label text="Recent Rentals"
+                                                       style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 16px;
+                              -fx-font-weight: bold;" />
+                                                <Label style="-fx-pref-width: 200;" />
+                                                <TextField fx:id="rentalSearchField"
+                                                           prefWidth="200.0"
+                                                           prefHeight="34.0"
+                                                           promptText="Search rentals..."
+                                                           style="-fx-background-color: #F8FAFC;
+                                  -fx-border-color: #CBD5E1;
+                                  -fx-border-width: 1.5px;
+                                  -fx-border-radius: 8px;
+                                  -fx-background-radius: 8px;
+                                  -fx-font-size: 12px;
+                                  -fx-padding: 0 10px;" />
+                                                <Label fx:id="rentalCountLabel"
+                                                       text="0 records"
+                                                       style="-fx-text-fill: #94A3B8;
+                              -fx-font-size: 12px;" />
+                                            </children>
+                                        </HBox>
+
+                                        <TableView fx:id="recentRentalsTable"
+                                                   prefHeight="280.0"
+                                                   style="-fx-background-color: transparent;
+                          -fx-border-color: #E2E8F0;
+                          -fx-border-radius: 8px;">
+                                            <columns>
+                                                <TableColumn fx:id="rentalCustomerCol" text="Customer" prefWidth="180" />
+                                                <TableColumn fx:id="rentalVehicleCol" text="Vehicle" prefWidth="150" />
+                                                <TableColumn fx:id="rentalStartCol" text="Start Date" prefWidth="120" />
+                                                <TableColumn fx:id="rentalReturnCol" text="Return Date" prefWidth="120" />
+                                                <TableColumn fx:id="rentalStatusCol" text="Status" prefWidth="100" />
+                                                <TableColumn fx:id="rentalCostCol" text="Cost" prefWidth="100" />
+                                            </columns>
+                                        </TableView>
+
+                                    </children>
+                                </VBox>
+                                <!-- OVERDUE ALERT -->
+                                <VBox fx:id="overdueAlert"
+                                      style="-fx-background-color: #FEF2F2;
+                                             -fx-background-radius: 12px;
+                                             -fx-padding: 20px;
+                                             -fx-spacing: 8;
+                                             -fx-border-color: #FECACA;
+                                             -fx-border-width: 1px;
+                                             -fx-border-radius: 12px;"
+                                      visible="false"
+                                      managed="false">
+                                    <children>
+                                        <Label text="Overdue Rentals Alert"
+                                               style="-fx-text-fill: #DC2626;
+                                                      -fx-font-size: 14px;
+                                                      -fx-font-weight: bold;" />
+                                        <Label fx:id="overdueLabel"
+                                               text=""
+                                               style="-fx-text-fill: #EF4444;
+                                                      -fx-font-size: 13px;" />
+                                    </children>
+                                </VBox>
+
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

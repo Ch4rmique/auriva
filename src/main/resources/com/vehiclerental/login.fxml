@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vehiclerental.controller.LoginController"
+            prefHeight="660.0"
+            prefWidth="1060.0"
+            style="-fx-background-color: #FFFFFF;">
+   <children>
+
+      <!-- LEFT SIDE - Blue branding panel -->
+      <VBox prefHeight="800.0" prefWidth="440.0"
+            style="-fx-background-color: #1E40AF;
+                     -fx-alignment: center;
+                     -fx-spacing: 24;
+                     -fx-padding: 60;">
+         <children>
+
+            <!-- LOGO -->
+            <StackPane prefWidth="80.0" prefHeight="80.0"
+                       style="-fx-background-color: #2563EB;
+                                  -fx-background-radius: 20px;">
+               <children>
+                  <Label text="A"
+                         style="-fx-text-fill: white;
+                                      -fx-font-size: 42px;
+                                      -fx-font-weight: bold;" />
+               </children>
+            </StackPane>
+
+            <!-- COMPANY NAME -->
+            <Label text="AURIVA"
+                   style="-fx-text-fill: #FFFFFF;
+                              -fx-font-size: 42px;
+                              -fx-font-weight: bold;" />
+
+            <!-- GOLD DIVIDER -->
+            <Label prefWidth="80.0" prefHeight="3.0"
+                   style="-fx-background-color: #D4AF37;
+                              -fx-background-radius: 2px;" />
+
+            <!-- TAGLINE -->
+            <Label text="Move with Gold. Drive with Grace."
+                   style="-fx-text-fill: #BFDBFE;
+                              -fx-font-size: 14px;
+                              -fx-font-style: italic;" />
+
+            <!-- SPACER -->
+            <Label prefHeight="40.0" />
+
+            <!-- INFO BOXES -->
+            <VBox style="-fx-background-color: #1D4ED8;
+                             -fx-background-radius: 12px;
+                             -fx-padding: 20px;
+                             -fx-spacing: 8;">
+               <children>
+                  <Label text="Secure Login"
+                         style="-fx-text-fill: white;
+                                      -fx-font-size: 14px;
+                                      -fx-font-weight: bold;" />
+                  <Label text="Your session is protected with BCrypt encryption."
+                         style="-fx-text-fill: #BFDBFE;
+                                      -fx-font-size: 12px;" />
+               </children>
+            </VBox>
+
+            <!-- SPACER -->
+            <Label prefHeight="20.0" />
+
+            <VBox style="-fx-background-color: #1D4ED8;
+                             -fx-background-radius: 12px;
+                             -fx-padding: 20px;
+                             -fx-spacing: 8;">
+               <children>
+                  <Label text="Role Based Access"
+                         style="-fx-text-fill: white;
+                                      -fx-font-size: 14px;
+                                      -fx-font-weight: bold;" />
+                  <Label text="Admin and Staff have different access levels."
+                         style="-fx-text-fill: #BFDBFE;
+                                      -fx-font-size: 12px;" />
+               </children>
+            </VBox>
+
+            <!-- FOOTER -->
+            <Label prefHeight="20.0" />
+            <Label text="© 2025 Auriva. All rights reserved."
+                   style="-fx-text-fill: #60A5FA;
+                              -fx-font-size: 11px;" />
+
+         </children>
+      </VBox>
+
+      <!-- RIGHT SIDE - Login form -->
+      <VBox fx:id="loginCard"
+            layoutX="440.0"
+            prefHeight="660.0" prefWidth="620.0"
+            style="-fx-background-color: #FFFFFF;
+                     -fx-alignment: center;
+                     -fx-spacing: 16;
+                     -fx-padding: 80;">
+         <children>
+
+            <!-- HEADING -->
+            <Label text="Welcome Back"
+                   style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 32px;
+                              -fx-font-weight: bold;" />
+
+            <Label text="Sign in to your Auriva account"
+                   style="-fx-text-fill: #475569;
+                              -fx-font-size: 14px;" />
+
+            <!-- SPACER -->
+            <Label prefHeight="10.0" />
+
+            <!-- ROLE LABEL -->
+            <Label text="Select Role"
+                   style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 13px;
+                              -fx-font-weight: bold;" />
+
+            <!-- ROLE DROPDOWN -->
+            <ComboBox fx:id="roleComboBox"
+                      prefWidth="380.0"
+                      prefHeight="45.0"
+                      style="-fx-background-color: #F8FAFC;
+                                 -fx-border-color: #CBD5E1;
+                                 -fx-border-width: 1.5px;
+                                 -fx-border-radius: 8px;
+                                 -fx-background-radius: 8px;
+                                 -fx-font-size: 14px;
+                                 -fx-cursor: hand;" />
+
+            <!-- USERNAME LABEL -->
+            <Label text="Username"
+                   style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 13px;
+                              -fx-font-weight: bold;" />
+
+            <!-- USERNAME FIELD -->
+            <TextField fx:id="usernameField"
+                       prefWidth="380.0"
+                       prefHeight="45.0"
+                       promptText="Enter your username"
+                       style="-fx-background-color: #F8FAFC;
+                                  -fx-border-color: #CBD5E1;
+                                  -fx-border-width: 1.5px;
+                                  -fx-border-radius: 8px;
+                                  -fx-background-radius: 8px;
+                                  -fx-font-size: 14px;
+                                  -fx-padding: 0 15px;" />
+
+            <!-- PASSWORD LABEL -->
+            <Label text="Password"
+                   style="-fx-text-fill: #0F172A;
+                              -fx-font-size: 13px;
+                              -fx-font-weight: bold;" />
+
+            <!-- PASSWORD ROW with show/hide -->
+            <HBox prefWidth="380.0" prefHeight="45.0"
+                  style="-fx-background-color: #F8FAFC;
+                             -fx-border-color: #CBD5E1;
+                             -fx-border-width: 1.5px;
+                             -fx-border-radius: 8px;
+                             -fx-background-radius: 8px;
+                             -fx-alignment: center-left;">
+               <children>
+
+                  <PasswordField fx:id="passwordField"
+                                 prefHeight="43.0"
+                                 prefWidth="320.0"
+                                 promptText="Enter your password"
+                                 style="-fx-background-color: transparent;
+                                              -fx-border-width: 0;
+                                              -fx-font-size: 14px;
+                                              -fx-padding: 0 15px;" />
+
+                  <Button fx:id="showPasswordBtn"
+                          text="on"
+                          mnemonicParsing="false"
+                          onAction="#handleShowPassword"
+                          prefWidth="50.0"
+                          prefHeight="43.0"
+                          style="-fx-background-color: transparent;
+                                       -fx-font-size: 16px;
+                                       -fx-cursor: hand;
+                                       -fx-border-width: 0;" />
+
+               </children>
+            </HBox>
+
+            <!-- ERROR LABEL -->
+            <Label fx:id="errorLabel"
+                   text=""
+                   style="-fx-text-fill: #EF4444;
+                              -fx-font-size: 13px;" />
+
+            <!-- LOGIN BUTTON -->
+            <Button fx:id="loginBtn"
+                    text="Sign In →"
+                    mnemonicParsing="false"
+                    onAction="#handleLogin"
+                    prefWidth="380.0"
+                    prefHeight="50.0"
+                    style="-fx-background-color: #2563EB;
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;
+                               -fx-font-weight: bold;
+                               -fx-background-radius: 10px;
+                               -fx-cursor: hand;" />
+
+            <!-- BACK BUTTON -->
+            <Button fx:id="backBtn"
+                    text="← Back to Welcome"
+                    mnemonicParsing="false"
+                    onAction="#handleBack"
+                    prefWidth="380.0"
+                    prefHeight="40.0"
+                    style="-fx-background-color: #F1F5F9;
+                               -fx-text-fill: #475569;
+                               -fx-font-size: 13px;
+                               -fx-background-radius: 10px;
+                               -fx-cursor: hand;" />
+
+         </children>
+      </VBox>
+
+   </children>
+</AnchorPane>

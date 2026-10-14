@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- about.fxml -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #F1F5F9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vehiclerental.controller.AboutController">
+    <children>
+
+        <!-- SIDEBAR -->
+        <VBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" prefWidth="220.0" style="-fx-background-color: #1E40AF; -fx-spacing: 0; -fx-padding: 0;">
+            <children>
+                <VBox style="-fx-alignment: center; -fx-padding: 30px 20px 20px 20px; -fx-spacing: 8;">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold; -fx-background-color: #2563EB; -fx-background-radius: 12px; -fx-padding: 8px 16px;" text="A" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="AURIVA" />
+                        <Label style="-fx-text-fill: #93C5FD; -fx-font-size: 11px;" text="Vehicle Rentals" />
+                    </children>
+                </VBox>
+                <Label prefHeight="1.0" prefWidth="220.0" style="-fx-background-color: #1D4ED8;" />
+                <Region prefHeight="10.0" />
+                <Button fx:id="dashboardBtn" mnemonicParsing="false" onAction="#handleDashboard" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: #BFDBFE; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Dashboard" />
+                <Button fx:id="vehiclesBtn" mnemonicParsing="false" onAction="#handleVehicles" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: #BFDBFE; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Vehicles" />
+                <Button fx:id="customersBtn" mnemonicParsing="false" onAction="#handleCustomers" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: #BFDBFE; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Customers" />
+                <Button fx:id="rentalsBtn" mnemonicParsing="false" onAction="#handleRentals" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: #BFDBFE; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Rentals" />
+                <Button fx:id="usersBtn" mnemonicParsing="false" onAction="#handleUsers" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-text-fill: #BFDBFE; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Users" />
+                <Button fx:id="aboutBtn" mnemonicParsing="false" onAction="#handleAbout" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand; -fx-border-width: 0 0 0 4px; -fx-border-color: #D4AF37;" text="  About" />
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <Label prefHeight="1.0" prefWidth="220.0" style="-fx-background-color: #1D4ED8;" />
+                <VBox style="-fx-padding: 16px 20px; -fx-spacing: 4;">
+                    <children>
+                        <Label fx:id="loggedInName" style="-fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold;" text="Administrator" />
+                        <Label fx:id="loggedInRole" style="-fx-text-fill: #93C5FD; -fx-font-size: 11px;" text="Admin" />
+                    </children>
+                </VBox>
+                <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#handleLogout" prefHeight="48.0" prefWidth="220.0" style="-fx-background-color: #1D4ED8; -fx-text-fill: #FCA5A5; -fx-font-size: 14px; -fx-alignment: center-left; -fx-padding: 0 0 0 24px; -fx-cursor: hand;" text="  Logout" />
+            </children>
+        </VBox>
+
+        <!-- MAIN CONTENT -->
+        <VBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" style="-fx-background-color: #F1F5F9; -fx-spacing: 0;">
+            <children>
+
+                <!-- TOP BAR -->
+                <HBox prefHeight="70.0" style="-fx-background-color: #FFFFFF; -fx-alignment: center-left; -fx-padding: 20px 30px 0 30px;">
+                    <children>
+                        <VBox style="-fx-spacing: 2; -fx-alignment: center-left;">
+                            <children>
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-size: 20px; -fx-font-weight: bold;" text="System Information" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- INFO SECTION -->
+                <VBox style="-fx-padding: 40px; -fx-spacing: 20;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox style="-fx-background-color: white; -fx-padding: 30px; -fx-background-radius: 12px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2); -fx-spacing: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #1E40AF; -fx-font-size: 24px; -fx-font-weight: bold;" text="Auriva Vehicle Rentals" />
+                                <Label wrapText="true" style="-fx-text-fill: #475569; -fx-font-size: 14px;" text="A desktop application engineered for seamless fleet tracking, client records management, and secure rental contract operations." />
+                            </children>
+                        </VBox>
+
+                        <VBox style="-fx-background-color: white; -fx-padding: 24px; -fx-background-radius: 12px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2); -fx-spacing: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: #1E40AF; -fx-font-size: 24px; -fx-font-weight: bold;" text="Auriva Vehicle Rentals" />
+                                <Label wrapText="true" style="-fx-text-fill: #475569; -fx-font-size: 14px;" text="Auriva is a desktop fleet management system built for car rental businesses that need a faster, more reliable way to track vehicles, manage customers, and process rental agreements — replacing manual logs and spreadsheets with one connected workspace for the whole team." />
+                                <Label style="-fx-text-fill: #475569; -fx-font-size: 13px;" text="Version: 1.0.0 (Stable Release)" />
+                            </children>
+                        </VBox>
+
+                        <VBox style="-fx-background-color: white; -fx-padding: 24px; -fx-background-radius: 12px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2); -fx-spacing: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-size: 16px; -fx-font-weight: bold;" text="Software Stack" />
+                                <Label style="-fx-text-fill: #475569; -fx-font-size: 13px;" text="Frontend Framework: JavaFX 21 (FXML Layouts)" />
+                                <Label style="-fx-text-fill: #475569; -fx-font-size: 13px;" text="Database System: MongoDB Atlas Cloud Cluster" />
+                                <Label style="-fx-text-fill: #475569; -fx-font-size: 13px;" text="Core Libraries: jBCrypt Encryption, iText Engine" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>
